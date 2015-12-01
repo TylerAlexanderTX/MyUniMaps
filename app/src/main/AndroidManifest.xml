@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.myunimaps.myunimaps" >
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+   <!--
+ The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but are recommended.
+    -->
+    <permission android:name="com.myunimaps.myunimaps.permission.MAPS_RECEIVE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.myunimaps.myunimaps.permission.MAPS_RECEIVE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".MapActivity"
+            android:label="MyUniMaps"
+            android:theme="@style/AppTheme" >
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".CamSelTest"/>
+        </activity>
+        <activity
+            android:name=".CampusSelect"
+            android:label="Campus Selection" >
+        </activity>
+        <activity
+            android:name=".CamSelTest"
+            android:label="MyUniMaps: Choose Your Campus"
+            android:theme="@style/AppTheme" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Help"
+            android:label="Help" />
+        <activity
+            android:name=".AboutUs"
+            android:label="About Us" >
+        </activity>
+    </application>
+
+</manifest>
